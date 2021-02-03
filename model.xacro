@@ -73,6 +73,8 @@
 				<geometry>
 					<cylinder radius="0.11" length="0.05"/>
 				</geometry>
+				<!--<contact_coefficients mu="100000" kp="0" kd="0"/>-->
+				<gazebo>
 				<surface>
 					<friction>
 						<ode>
@@ -83,6 +85,7 @@
 						</ode>
 					</friction>
 				</surface>
+			</gazebo>
 			</collision>
 			<visual name="${name}_visual">
 				<origin xyz="${position2}" rpy="${orientation}"/>
