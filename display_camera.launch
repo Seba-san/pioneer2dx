@@ -44,6 +44,9 @@
 
   <!-- ros_control rrbot launch file -->
   <!--include file="$(find rrbot_control)/launch/rrbot_control.launch" /-->
+	<!-- Mostrar la imagen completa -->
+  <!--<node pkg="image_view" type="image_view" name="imagen" args="image:=/pioneer2dx/camera1/image_raw"/>-->
+  <!--<node pkg="rqt_image_view" type="rqt_image_view" name="imagen" args="image:=/pioneer2dx/camera1/image_raw"/>-->
 
 </launch>
 
