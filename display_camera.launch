@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <launch>
   <arg name="meshlocation" default="$(env PWD)"/>		
   <arg name="model" default="$(arg meshlocation)/model.xacro"/>

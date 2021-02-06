@@ -74,18 +74,7 @@
 					<cylinder radius="0.11" length="0.05"/>
 				</geometry>
 				<!--<contact_coefficients mu="100000" kp="0" kd="0"/>-->
-				<gazebo>
-				<surface>
-					<friction>
-						<ode>
-							<mu>100000.0</mu>
-							<mu2>100000.0</mu2>
-							<slip1>0.0</slip1>
-							<slip2>0.0</slip2>
-						</ode>
-					</friction>
-				</surface>
-			</gazebo>
+
 			</collision>
 			<visual name="${name}_visual">
 				<origin xyz="${position2}" rpy="${orientation}"/>
@@ -111,9 +100,14 @@
 	    <axis xyz="0 1 0"/>
 	    <!-- <limit effort="30" velocity="1" lower="-7" upper="7" />-->
     </joint>
+	<gazebo reference="${name}_wheel">
+		<mu1 value="1.0"/>
+		<mu2 value="1.0"/>
+	</gazebo>
     </xacro:macro>
     <xacro:wheel name="right" pos="1" />
     <xacro:wheel name="left" pos="-1" />
+
     <link name="Camera">
 	    <visual name="camera_visual">
 		    <origin xyz="0 0 0" rpy="0 0 0"/>

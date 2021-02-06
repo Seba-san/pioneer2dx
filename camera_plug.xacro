@@ -2,12 +2,12 @@
 <robot name="camera_pioneer2dx" xmlns:xacro="http://ros.org/wiki/xacro">
 <gazebo reference="Camera">
     <sensor type="camera" name="camera1">
-      <update_rate>30.0</update_rate>
+      <update_rate>15.0</update_rate>
       <camera name="head">
         <horizontal_fov>1.3962634</horizontal_fov>
         <image>
           <width>800</width>
-          <height>800</height>
+          <height>600</height>
           <format>R8G8B8</format>
         </image>
         <clip>
