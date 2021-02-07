@@ -126,12 +126,39 @@
 	    <origin xyz="0.14 0 0.16" rpy="0 0 0" />
     </joint>
 
+    <link name="Lidar">
+	    <!--<visual name="Lidar_visual">
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+		    <geometry>
+			    <box size="0.1 0.1 0.1"/>
+		    </geometry>
+		    <material name="Lidar_color">
+			    <color rgba="0 0 1 1"/>
+		    </material>
+		    
+	    </visual>-->
+     <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	      <!-- <mesh filename="package://rrbot_description/meshes/hokuyo.dae"/>-->
+	<mesh filename="file://$(arg meshlocation)/meshes/hokuyo.dae"/>
+      </geometry>
+    </visual>
+    </link>
+    <joint name="lidar_to_chassis" type="fixed">
+	    <parent link="chassis"/>
+	    <child link="Lidar"/>
+	    <axis xyz="0 1 0"/>
+	    <origin xyz="0.14 0 0.4" rpy="0 0 0" />
+    </joint>
     <!-- Fuente: http://gazebosim.org/tutorials?tut=ros_gzplugins -->
 <!-- Plugins -->	
     <!-- camera -->
-    <xacro:include filename="camera_plug.xacro"/>
-    <!--<xacro:include filename="differential_plug.xacro"/>
-    <xacro:include filename="transmition.xacro"/>-->
+    <xacro:include filename="./plugins/camera_plug.xacro"/>
+    <xacro:include filename="./plugins/lidar_plug.xacro"/>
+
+    <!--<xacro:include filename="./plugins/differential_plug.xacro"/>
+    <xacro:include filename="./plugins/transmition.xacro"/>-->
     <!--
 	    <plugin filename="libDiffDrivePlugin.so" name="diff_drive">
 	      <left_joint>left_wheel_hinge</left_joint>

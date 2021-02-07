@@ -1,3 +1,8 @@
+# Requerimientos
+Esta libreria se probó en ROS Melodic.
+```sh
+$sudo apt-get install ros-$ROS_DISTRO-gazebo11-ros-pkgs  ros-$ROS_DISTRO-gazebo11-ros-control
+```
 # Libreria Pioneer2dx
 La idea de esta libreria es poder descargarla y sin compilar nada podes correr el escenario. Para esto es necesario tener instalado ROS, las variables de entorno sourceadas y ejecutar el comando:
 
