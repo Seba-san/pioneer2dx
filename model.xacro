@@ -101,8 +101,8 @@
 	    <!-- <limit effort="30" velocity="1" lower="-7" upper="7" />-->
     </joint>
 	<gazebo reference="${name}_wheel">
-		<mu1 value="1.0"/>
-		<mu2 value="1.0"/>
+		<mu1 value="0.4"/>
+		<mu2 value="0.3"/>
 	</gazebo>
     </xacro:macro>
     <xacro:wheel name="right" pos="1" />
