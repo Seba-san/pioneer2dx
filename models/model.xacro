@@ -41,8 +41,8 @@
 		<visual name="visual">
 			<origin xyz="0 0 0.04" rpy="0 0 0"/>
 			<geometry>
-				<!--<mesh filename="package://pioneer2dx/meshes/chassis.dae"/>-->
-				<mesh filename="file://$(arg meshlocation)/meshes/chassis.dae"/>
+				<mesh filename="package://pioneer2dx/meshes/chassis.dae"/>
+				<!--<mesh filename="file://$(arg meshlocation)/meshes/chassis.dae"/>-->
 			</geometry>
 		</visual>
 		<visual name="castor_visual">
@@ -140,8 +140,8 @@
      <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-	      <!-- <mesh filename="package://rrbot_description/meshes/hokuyo.dae"/>-->
-	<mesh filename="file://$(arg meshlocation)/meshes/hokuyo.dae"/>
+	      <mesh filename="package://pioneer2dx/meshes/hokuyo.dae"/>
+	      <!--<mesh filename="file://$(arg meshlocation)/meshes/hokuyo.dae"/>-->
       </geometry>
     </visual>
     </link>
@@ -154,8 +154,11 @@
     <!-- Fuente: http://gazebosim.org/tutorials?tut=ros_gzplugins -->
 <!-- Plugins -->	
     <!-- camera -->
-    <xacro:include filename="./plugins/camera_plug.xacro"/>
-    <xacro:include filename="./plugins/lidar_plug.xacro"/>
+
+    <xacro:include filename="$(find pioneer2dx)/plugins/camera_plug.xacro"/>
+    <xacro:include filename="$(find pioneer2dx)/plugins/lidar_plug.xacro"/>
+    <!--<xacro:include filename="./plugins/camera_plug.xacro"/>
+    <xacro:include filename="./plugins/lidar_plug.xacro"/>-->
 
     <!--<xacro:include filename="./plugins/differential_plug.xacro"/>
     <xacro:include filename="./plugins/transmition.xacro"/>-->

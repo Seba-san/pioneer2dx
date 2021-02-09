@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <launch>
   <arg name="meshlocation" default="$(env PWD)"/>		
-  <arg name="model" default="$(arg meshlocation)/model.xacro"/>
+  <arg name="model" default="$(find pioneer2dx)/models/model.xacro"/>
   <arg name="gui" default="false" />
   <!--<arg name="rvizconfig" default="$(find urdf_tutorial)/rviz/urdf.rviz" />-->
 
 	
   <!-- Load the URDF into the ROS Parameter Server -->
-  <param name="robot_description" command="$(find xacro)/xacro $(arg model) meshlocation:=$(arg meshlocation)" />
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
  
   <!-- <param name="use_gui" value="$(arg gui)"/>-->
 
@@ -29,7 +29,7 @@
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <!--<include file="$(arg meshlocation)/test_world.sdf">-->
     <!--<arg name="world_name" value="$(find rrbot_gazebo)/worlds/rrbot.world"/>-->
-    <arg name="world_name" value="$(arg meshlocation)/test_world.sdf"/>
+    <arg name="world_name" value="$(find pioneer2dx)/worlds/test_world.sdf"/>
     <arg name="debug" value="$(arg debug)" />
     <arg name="gui" value="$(arg gui)" />
     <arg name="paused" value="$(arg paused)"/>
