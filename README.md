@@ -5,7 +5,11 @@ $sudo apt-get install ros-$ROS_DISTRO-gazebo11-ros-pkgs  ros-$ROS_DISTRO-gazebo1
 $sudo apt-get install ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-robot-state-publisher
 ```
 # Libreria Pioneer2dx
-Esta libreria contiene al Pioneer2dx (poner foto?) y a un entorno de testeo. Papra probarlo sourcear las variables de entorno de ROS y luego hacer
+Esta libreria contiene al Pioneer2dx  
+![](images/pioneer2dx.png)
+y a un entorno de testeo
+![](images/escenario.jpg)
+ Papra probarlo sourcear las variables de entorno de ROS y luego hacer
 
 ```sh
 $ mkdir ws/src
