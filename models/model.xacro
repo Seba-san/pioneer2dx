@@ -32,8 +32,8 @@
 					<ode>
 						<mu>0</mu>
 						<mu2>0</mu2>
-						<slip1>1.0</slip1>
-						<slip2>1.0</slip2>
+						<slip1>0</slip1>
+						<slip2>0</slip2>
 					</ode>
 				</friction>
 			</surface>
@@ -101,8 +101,8 @@
 	    <!-- <limit effort="30" velocity="1" lower="-7" upper="7" />-->
     </joint>
 	<gazebo reference="${name}_wheel">
-		<mu1 value="0.4"/>
-		<mu2 value="0.3"/>
+		<mu1 value="0.01"/>
+		<mu2 value="0.01"/>
 	</gazebo>
     </xacro:macro>
     <xacro:wheel name="right" pos="1" />
