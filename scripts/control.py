@@ -285,9 +285,9 @@ def respawnModel():
 
 def keyBoardOperation():
     moveBindings = {
-        'a':[setForceWheels,[-0.2,0.2]],
+        'a':[setForceWheels,[0.2,-0.2]],
         's':[setForceWheels,[-0.2,-0.2]],
-        'd':[setForceWheels,[0.2,-0.2]],
+        'd':[setForceWheels,[-0.2,0.2]],
         'w':[setForceWheels,[0.2,0.2]],
         'q':[salir,0],
         'x':[setIniciar,0],

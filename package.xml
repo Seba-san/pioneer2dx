@@ -51,6 +51,8 @@
   <exec_depend>gazebo_msgs</exec_depend>
   <exec_depend>gazebo_ros_control</exec_depend>
   <exec_depend>gazebo_ros_pkgs</exec_depend>
+  <exec_depend>diff_drive_controller</exec_depend>
+  <exec_depend>hardware_interface</exec_depend>
 
   <!-- Use test_depend for packages you need only for testing: -->
   <!--   <test_depend>gtest</test_depend> -->

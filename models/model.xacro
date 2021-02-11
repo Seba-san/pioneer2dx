@@ -160,14 +160,14 @@
     <!--<xacro:include filename="./plugins/camera_plug.xacro"/>
     <xacro:include filename="./plugins/lidar_plug.xacro"/>-->
 
-    <!--<xacro:include filename="./plugins/differential_plug.xacro"/>
-    <xacro:include filename="./plugins/transmition.xacro"/>-->
+    <!--<xacro:include filename="./plugins/differential_plug.xacro"/>-->
+    <xacro:include filename="$(find pioneer2dx)/plugins/transmition.xacro"/>
     <!--
 	    <plugin filename="libDiffDrivePlugin.so" name="diff_drive">
 	      <left_joint>left_wheel_hinge</left_joint>
 	      <right_joint>right_wheel_hinge</right_joint>
 	      <torque>5</torque>
-	    </plugin>
+	    </plugin> 
     -->
   </robot>
 
