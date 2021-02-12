@@ -16,11 +16,10 @@ Papra probarlo setear las variables de entorno de ROS y luego hacer
 $ mkdir ws/src
 $ cd ws/src
 $ git clone https://github.com/Seba-san/pioneer2dx.git
-$ git checkout package
 $ cd ..
 $ catkin_make
 $ source devel/setup.bash
-$ roslaunch pioneer2dx display_camera.launch
+$ roslaunch pioneer2dx controller.launch
 ```
 Este comando iniciará gazebo server sin la interfaz gráfica, iniciara el mundo test_word.sdf y pone el pioneer2dx en el origen de coordenadas.
 En otra terminal poner
