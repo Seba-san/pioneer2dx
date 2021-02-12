@@ -216,7 +216,7 @@ def getLinkState(link_name_='',reference=''):
     rospy.wait_for_service(service)
     getLinkState=rospy.ServiceProxy(service,GetLinkState)
     return getLinkState(link_name=link_name_,reference_frame=reference)
-
+ 
 def setVelocityWheels():
     leftWheelIni=getLinkState('left_wheel','base_link')
     rightWheelIni=getLinkState('right_wheel','base_link')
