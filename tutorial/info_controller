@@ -23,3 +23,7 @@ Unload a controller: Use the /controller_manager/load_controller service
 Precondition: Controller is stopped.
 Effect: Calls controller destructor.
 Postcondition: Controller no longer managed by the controller_manager.
+
+Para que funcione el differential controler, es necesario publicar un mensaje en el topic "cmd_vel", para saber exactamente cual es hay que hacer roswtf y ver cual es el nodo que se esta escuchando pero nadie publica. Con el setup actual es /rrbot/mobile_base_controller/cmd_vel
+
+Hay otro problema que suele aparecer, cuando conectas 2 ROS en red, al parecer el server no conecta con los topics de los clientes.... por lo tanto no los escucha y hace parecer que el controlador no funciona. Para solucionarlo hay que setear ROS_IP=192.168.100.102 y ROS_HOSTNAME=seba-inaut (por decir algo). ADEMAS HAY QUE incorporar los nombres en /etc/hosts es decir poner una linea con: 192.168.100.191 seba-inaut en una pc y en la otra el mismo ejemplo

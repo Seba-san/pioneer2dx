@@ -44,7 +44,7 @@
 			args="-urdf -model pioneer2dx -param robot_description"/>
 
 		<rosparam file="$(find pioneer2dx)/config/diff_drive_controller.yaml" command="load"/>
-		<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/rrbot" args="mobile_base_controller"/>
+		<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="mobile_base_controller"/>
 		<!-- ros_control rrbot launch file -->
 		<!--include file="$(find rrbot_control)/launch/rrbot_control.launch" /-->
 		<!-- Mostrar la imagen completa -->
