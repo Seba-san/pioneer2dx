@@ -27,6 +27,12 @@ En otra terminal poner
 $ roscd pioneer2dx
 $rosrun rviz rviz -d ./config/rviz_config.rviz
 ```
+Además puede ejecutar el controlador para ser teleoperado por teclado mediante:
+
+```sh
+$rosrun pioneer2dx controller_node.py
+```
+luego mediante el uso de las teclas: "w-a-s-d" para moverse, "q" para salir, "r" para hacer un respawn del vehículo y "x" para resetear el modelo en el origen de coordenadas.
 
 Pioneer2dx cuenta con una cámara  frontal 800x600px publicando las imagenes a 15 frames. Todo esto es configurable en el archivo plugins/camera_plug.xacro
 

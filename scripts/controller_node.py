@@ -1,16 +1,18 @@
 #!/usr/bin/env python
 import rospy
 
-from geometry_msgs.msg import Twist 
+from geometry_msgs.msg import Twist
+#from std_msgs.msg import String
 import threading
 import sys, select, termios, tty # Esto es para leer el teclado
 import os
 from gazebo_msgs.srv import SetModelState, DeleteModel
 from gazebo_msgs.msg import ModelState
+from controller_manager_msgs.srv import LoadController, SwitchController
 
 class ControlAction():
     """
-    Esta clase genera un nodo en un hilo paralelo para controlar:
+    Esta clase genera un nodo para controlar:
     diff_drive_controller/DiffDriveController
     """
     def __init__(self,name):
@@ -19,7 +21,7 @@ class ControlAction():
         self.setPoint=Twist()
         self.keyBoardOperation()
         msg='Recordar que es necesario cargar el controlador antes' \
-            '(ver de hacerlo automaticamente antes)'
+            ' en el launch file, ver ejemplo launch/controller.launch'
         print(msg)
 	#self.x = threading.Thread(target=self.controlAction)
         #self.controlAction()
@@ -117,6 +119,19 @@ class ControlAction():
         deleteModel=rospy.ServiceProxy(service,DeleteModel)
         deleteModel(model_name='pioneer2dx')
         os.system("roslaunch pioneer2dx respawn.launch")
+        print('configurando controlador')
+        service='/rrbot/controller_manager/load_controller'
+        rospy.wait_for_service(service)
+        loadController=rospy.ServiceProxy(service,LoadController)
+        msg=LoadController._request_class()
+        msg.name='mobile_base_controller'
+        loadController(msg)
+        service='/rrbot/controller_manager/switch_controller'
+        rospy.wait_for_service(service)
+        switchController=rospy.ServiceProxy(service,SwitchController)
+        msg=SwitchController._request_class()
+        msg.start_controllers=['mobile_base_controller']
+        switchController(msg)
         print('Respawn Finalizado')
 
 
