@@ -7,5 +7,7 @@
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
 	args="-urdf -model pioneer2dx -param robot_description"/>
 
+<rosparam file="$(find pioneer2dx)/config/diff_drive_controller.yaml" command="load"/>
+
 </launch>
 
